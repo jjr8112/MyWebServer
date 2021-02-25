@@ -1,4 +1,4 @@
-package com.jjr8112.webserver.sample.web.lintener;
+package com.jjr8112.webserver.sample.web.listener;
 
 import com.jjr8112.webserver.core.listener.ServletRequestListener;
 import com.jjr8112.webserver.core.listener.event.ServletRequestEvent;

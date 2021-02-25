@@ -211,10 +211,11 @@ public class Request {
         if (this.params == null) {
             this.params = new HashMap<>();
         }
+
         for (String param : urlParams) {
             String[] kv = param.split("=");
             String key = kv[0];
-            String[] values = kv[1].split(",");
+            String [] values = kv[1].split(",");
 
             this.params.put(key, Arrays.asList(values));
         }
