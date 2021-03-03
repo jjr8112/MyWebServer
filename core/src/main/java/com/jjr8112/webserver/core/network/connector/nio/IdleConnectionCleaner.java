@@ -8,10 +8,13 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 清除过期 Connector
+ */
 @Slf4j
 public class IdleConnectionCleaner implements Runnable {
-    private ScheduledExecutorService executor;
-    private List<NioPoller> nioPollers;
+    private ScheduledExecutorService executor;      // 线程池
+    private List<NioPoller> nioPollers;             // 循环器
 
     public IdleConnectionCleaner(List<NioPoller> nioPollers) {
         this.nioPollers = nioPollers;

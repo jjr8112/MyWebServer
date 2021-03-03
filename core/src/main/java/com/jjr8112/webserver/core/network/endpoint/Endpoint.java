@@ -21,7 +21,7 @@ public abstract class Endpoint {
      * @return
      */
     public static Endpoint getInstance(String connector) {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();             // 指向待使用的路径
         sb.append("com.jjr8112.webserver.core.network.endpoint")
                 .append(".")
                 .append(connector)
@@ -29,7 +29,7 @@ public abstract class Endpoint {
                 .append(StringUtils.capitalize(connector))  // 第一个字母小写转大写
                 .append("Endpoint");
         try {
-            return (Endpoint) Class.forName(sb.toString()).newInstance();
+            return (Endpoint) Class.forName(sb.toString()).newInstance();   // 上述路径下的类的对象
         } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {

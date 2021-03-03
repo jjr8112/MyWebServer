@@ -13,7 +13,6 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- *
  * 所有Dispatcher（请求分发器）的父类
  */
 public abstract class AbstractDispatcher {
@@ -23,9 +22,10 @@ public abstract class AbstractDispatcher {
     protected ServletContext servletContext;
 
     public AbstractDispatcher() {
-        this.servletContext = WebApplication.getServletContext();
-        this.exceptionHandler = new ExceptionHandler();
-        this.resourceHandler = new ResourceHandler(exceptionHandler);
+        this.servletContext = WebApplication.getServletContext();       // 获取 servlet
+        this.exceptionHandler = new ExceptionHandler();                 // 初始化异常处理器
+        this.resourceHandler = new ResourceHandler(exceptionHandler);   // 初始化静态资源处理器
+        // 匿名子类的实现
         ThreadFactory threadFactory = new ThreadFactory() {
             private int count;
 

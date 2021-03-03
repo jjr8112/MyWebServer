@@ -14,6 +14,9 @@ import java.util.Queue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+/**
+ * 轮询器
+ */
 @Slf4j
 public class NioPoller implements Runnable {
     private NioEndpoint nioEndpoint;

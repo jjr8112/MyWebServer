@@ -20,7 +20,7 @@ public class PropertyUtil {
         props = new Properties();
         InputStream in = null;
         try {
-            in = PropertyUtil.class                                                // 获取参数文件对象
+            in = PropertyUtil.class                                       // 获取参数文件对象
                     .getClassLoader()                                     // 获取类加载器
                     .getResourceAsStream("server.properties");     // 用 server.properties查找资源
             props.load(in);
@@ -41,6 +41,7 @@ public class PropertyUtil {
         log.info("properties文件内容：" + props);
     }
 
+    // 获取properties文件中的各个属性
     public static String getProperty(String key) {
         if (null == props) {
             loadProps();

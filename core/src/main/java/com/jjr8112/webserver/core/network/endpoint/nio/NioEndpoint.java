@@ -50,7 +50,7 @@ public class NioEndpoint extends Endpoint {
     }
 
     private void initPoller() throws IOException {
-        nioPollers = new ArrayList<>(pollerCount);
+        nioPollers = new ArrayList<>(pollerCount);  // 指定计算资源的轮询器
         for (int i = 0; i < pollerCount; i++) {
             String pollName = "NioPoller-" + i;
             NioPoller nioPoller = new NioPoller(this, pollName);

@@ -63,7 +63,7 @@ public class ServletContext {
     private Map<String, List<String>> filterMapping;
 
     /**
-     * 监听器们
+     * 监听器
      */
     private List<ServletContextListener> servletContextListeners;
     private List<HttpSessionListener> httpSessionListeners;
@@ -77,6 +77,7 @@ public class ServletContext {
      * 整个应用对应的session们
      */
     private Map<String, HttpSession> sessions;
+
     /**
      * 路径匹配器，由Spring提供
      */
