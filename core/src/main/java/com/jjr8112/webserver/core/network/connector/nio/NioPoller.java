@@ -42,6 +42,7 @@ public class NioPoller implements Runnable {
     public void register(SocketChannel socketChannel, boolean isNewSocket) {
         log.info("Acceptor将连接到的socket放入 {} 的Queue中", pollerName);
         NioSocketWrapper wrapper;
+        //
         if (isNewSocket) {
             // 设置waitBegin
             wrapper = new NioSocketWrapper(nioEndpoint, socketChannel, this, isNewSocket);
@@ -53,7 +54,8 @@ public class NioPoller implements Runnable {
         }
         wrapper.setWaitBegin(System.currentTimeMillis());
         events.offer(new PollerEvent(wrapper));
-        // 某个线程调用select()方法后阻塞了，即使没有通道已经就绪，也有办法让其从select()方法返回。只要让其它线程在第一个线程调用select()方法的那个对象上调用Selector.wakeup()方法即可。阻塞在select()方法上的线程会立马返回。
+        // 某个线程调用select()方法后阻塞了，即使没有通道已经就绪，也有办法让其从select()方法返回。
+        // 只要让其它线程在第一个线程调用select()方法的那个对象上调用Selector.wakeup()方法即可。阻塞在select()方法上的线程会立马返回。
         selector.wakeup();
     }
 
@@ -70,7 +72,7 @@ public class NioPoller implements Runnable {
         log.info("{} 开始监听", Thread.currentThread().getName());
         while (nioEndpoint.isRunning()) {
             try {
-                events();
+                events();       // socket注册到 selector中
                 if (selector.select() <= 0) {
                     continue;
                 }
@@ -101,9 +103,10 @@ public class NioPoller implements Runnable {
 
     private void processSocket(NioSocketWrapper attachment) {
         attachment.setWorking(true);
-        nioEndpoint.execute(attachment);
+        nioEndpoint.execute(attachment);        // 调用dispatcher，处理这个读已就绪的客户端连接
     }
 
+    // 清空Queue,将连接到的Socket注册到selector中
     private boolean events() {
         log.info("Queue大小为{},清空Queue,将连接到的Socket注册到selector中", events.size());
         boolean result = false;

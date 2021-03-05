@@ -24,6 +24,7 @@ import java.util.List;
 @Slf4j
 public class NioRequestHandler extends AbstractRequestHandler {
 
+    // 调用父类构造方法
     public NioRequestHandler(SocketWrapper socketWrapper, ServletContext servletContext, ExceptionHandler exceptionHandler, ResourceHandler resourceHandler, Request request, Response response) throws ServletNotFoundException, FilterNotFoundException {
         super(socketWrapper, servletContext, exceptionHandler, resourceHandler, request, response);
     }

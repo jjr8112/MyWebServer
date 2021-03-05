@@ -124,6 +124,17 @@ public class NioEndpoint extends Endpoint {
     }
 
     /**
+     * 将Acceptor接收到的socket放到轮询到的一个Poller的Queue中
+     * @param socket
+     * @return
+     */
+    public void registerToPoller(SocketChannel socket) throws IOException {
+        server.configureBlocking(false);    // 非阻塞
+        getPoller().register(socket, true);
+        server.configureBlocking(true);     // 阻塞
+    }
+
+    /**
      * 轮询Poller，实现负载均衡
      * @return
      */
@@ -142,20 +153,10 @@ public class NioEndpoint extends Endpoint {
      * @throws IOException
      */
     public SocketChannel accept() throws IOException {
-        return server.accept();
+        return server.accept();     // 调用ServerSocketChannel的 accept方法
     }
 
-    /**
-     * 将Acceptor接收到的socket放到轮询到的一个Poller的Queue中
-     *
-     * @param socket
-     * @return
-     */
-    public void registerToPoller(SocketChannel socket) throws IOException {
-        server.configureBlocking(false);
-        getPoller().register(socket, true);
-        server.configureBlocking(true);
-    }
+
 
     public int getKeepAliveTimeout() {
         return this.keepAliveTimeout;

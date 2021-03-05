@@ -23,11 +23,11 @@ public class NioAcceptor implements Runnable {
         while (nioEndpoint.isRunning()) {
             SocketChannel client;
             try {
-                client = nioEndpoint.accept();
+                client = nioEndpoint.accept();          // 接收客户端连接
                 if(client == null){
                     continue;
                 }
-                client.configureBlocking(false);
+                client.configureBlocking(false);        // 非阻塞
                 log.info("Acceptor接收到连接请求 {}",client);
                 nioEndpoint.registerToPoller(client);   // 当前客户端 socket实例加入到 poller的管理中
                 log.info("socketWrapper:{}", client);

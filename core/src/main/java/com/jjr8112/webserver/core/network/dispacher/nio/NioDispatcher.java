@@ -42,6 +42,7 @@ public class NioDispatcher extends AbstractDispatcher {
             baos.close();
             request = new Request(baos.toByteArray());
             response = new Response();
+            // 以下方法参数为初始化的 NioequestHandler对象
             pool.execute(new NioRequestHandler(nioSocketWrapper, servletContext, exceptionHandler, resourceHandler, request, response));
         } catch (IOException e) {
             e.printStackTrace();

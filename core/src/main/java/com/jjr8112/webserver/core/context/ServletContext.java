@@ -86,6 +86,7 @@ public class ServletContext {
     private IdleSessionCleaner idleSessionCleaner;
 
 
+    // 初始化
     public ServletContext() throws IllegalAccessException, ClassNotFoundException, InstantiationException {
         init();
     }
@@ -97,6 +98,7 @@ public class ServletContext {
      * @return
      * @throws ServletNotFoundException
      */
+    // 由 AbstractRequestHandler类的构造方法调用，映射servlet
     public Servlet mapServlet(String url) throws ServletNotFoundException {
         // 1、精确匹配
 
@@ -157,6 +159,7 @@ public class ServletContext {
      * @param url
      * @return
      */
+    // 由 AbstractRequestHandler类的构造方法调用，映射 Filter
     public List<Filter> mapFilter(String url) throws FilterNotFoundException {
         List<String> matchingPatterns = new ArrayList<>();
         Set<String> patterns = filterMapping.keySet();

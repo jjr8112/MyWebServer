@@ -3,20 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="31868f60-4d81-4f32-b6a9-56b91554b69d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/constant/CharConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/constant/CharConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/constant/CharsetProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/constant/CharsetProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/constant/ContextConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/constant/ContextConstant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/context/ServletContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/context/ServletContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/cookie/Cookie.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/cookie/Cookie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/connector/nio/IdleConnectionCleaner.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/connector/nio/IdleConnectionCleaner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/connector/nio/NioAcceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/connector/nio/NioAcceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/connector/nio/NioPoller.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/connector/nio/NioPoller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/dispacher/AbstractDispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/dispacher/AbstractDispatcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/endpoint/Endpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/endpoint/Endpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/dispacher/nio/NioDispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/dispacher/nio/NioDispatcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/endpoint/nio/NioEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/endpoint/nio/NioEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/wrapper/SocketWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/wrapper/SocketWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/util/PropertyUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/util/PropertyUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/handler/nio/NioRequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/com/jjr8112/webserver/core/network/handler/nio/NioRequestHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +84,8 @@
       <workItem from="1613921017774" duration="117000" />
       <workItem from="1614240695960" duration="8079000" />
       <workItem from="1614302308431" duration="252000" />
-      <workItem from="1614760405553" duration="8962000" />
+      <workItem from="1614760405553" duration="9205000" />
+      <workItem from="1614911254956" duration="6314000" />
     </task>
     <servers />
   </component>
@@ -116,10 +109,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="1045" y="168" key="#xdebugger.XInspectDialog/0.0.1536.824@0.0.1536.824" timestamp="1614260655084" />
-    <state x="933" y="173" key="FileChooserDialogImpl" timestamp="1614258006404">
+    <state x="933" y="173" key="FileChooserDialogImpl" timestamp="1614921680726">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="933" y="173" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1614258006404" />
+    <state x="933" y="173" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1614921680726" />
     <state width="723" height="617" key="GridCell.Tab.0.bottom" timestamp="1614264280202">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
